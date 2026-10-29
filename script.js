@@ -389,7 +389,7 @@ const reasonTexts = [
   'Menyenangkan diajak ngobrol.',
   'Selalu berkembang jadi pribadi yang lebih baik.',
   'Layak mendapatkan kebahagiaan.',
-  'Karena dia adalah Fika. 💕'
+  'Karena dia adalah Alfan. 💕'
 ];
 
 function buildReasonCards() {

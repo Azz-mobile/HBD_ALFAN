@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="Selamat Ulang Tahun ke-18 Fika Oktavia! 🎉">
+  <title>🎂 Happy 23th Birthday, Alfan Aditya Ramadhan! 💖</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Mali:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Audio -->
+  <audio id="birthday-audio" loop preload="auto">
+    <source src="birthday.mp3" type="audio/mpeg">
+  </audio>
+</head>
+<body>
+
+  <!-- Scroll Progress & Backdrop -->
+  <div id="scroll-progress"></div>
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- Floating Mascot -->
+  <div id="plushie-mascot" title="Klik aku!">
+    <div class="mascot-avatar">🧸</div>
+    <div class="speech-bubble">Halo Alfan! 🌸</div>
+  </div>
+
+  <!-- Loading Screen -->
+  <div id="loading-screen">
+    <div class="loading-box">
+      <div class="loading-gift">🎁</div>
+      <div class="loading-text">Menyiapkan kejutan super lucu untuk Alfan... 🎀</div>
+      <div class="loading-dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lightbox Gallery -->
+  <div id="lightbox" role="dialog" aria-modal="true">
+    <div class="lightbox-content">
+      <button class="lightbox-close" id="lightbox-close" aria-label="Close">✕</button>
+      <button class="lightbox-btn lightbox-prev" id="lightbox-prev" aria-label="Previous">❮</button>
+      <div id="lightbox-media-container"></div>
+      <button class="lightbox-btn lightbox-next" id="lightbox-next" aria-label="Next">❯</button>
+      <div class="lightbox-caption" id="lightbox-caption"></div>
+    </div>
+  </div>
+
+  <!-- Easter Egg Popup -->
+  <div id="easter-popup" role="dialog" aria-modal="true">
+    <div class="easter-box glass-card">
+      <span class="easter-emoji">😜</span>
+      <div class="easter-title">Eits, Alfan Penasaran Ya?!</div>
+      <div class="easter-text">Dibilang jangan diklik malah diklik 😂<br>Dasar gemoy! Tapi kamu memang selalu menggemaskan kok 💖✨</div>
+      <button class="btn-primary easter-close" id="easter-close">Hehe, ketahuan deh 🙈</button>
+    </div>
+  </div>
+
+  <!-- SECTION 1 - OPENING -->
+  <section id="section-opening">
+    <div class="opening-content glass-card">
+      <div class="cute-badge">🧸 Special Day For Alfan 🧸</div>
+      <div class="plushie-banner">
+        <span>🐰</span>
+        <span>🧸</span>
+        <span>🐥</span>
+      </div>
+      <div class="typing-container">
+        <div class="typing-line big">Hai Alfan Ganteng! 👋💖</div>
+        <div class="typing-line">Ada sesuatu yang spesial banget hari ini...</div>
+        <div class="typing-line">Bukan cuma sekadar tampilan biasa...</div>
+        <div class="typing-line">Tapi dipersembahkan khusus buat cowok paling Handsome yang lagi ulang tahun! 🎂✨</div>
+      </div>
+      <button class="btn-open glow-btn" id="btn-open">
+        🎁 Buka Kejutan 💕
+      </button>
+    </div>
+  </section>
+
+  <!-- SECTION 2 - HAPPY BIRTHDAY -->
+  <section id="section-birthday">
+    <div class="birthday-content section-wrapper">
+      <div class="birthday-emoji-row reveal">🎉 🎀 🎈 💖 🎊</div>
+
+      <h1 class="birthday-title reveal">Happy 23th Birthday!</h1>
+      <h2 class="birthday-name reveal">Alfan Aditya Ramadhan ✨</h2>
+
+      <!-- Cake -->
+      <div class="cake-container reveal">
+        <div class="candle-row">
+          <div class="candle">
+            <div class="flame" id="flame-s2-1"></div>
+            <div class="smoke"></div>
+            <div class="candle-wick"></div>
+            <div class="candle-body pink"></div>
+          </div>
+          <div class="candle">
+            <div class="flame" id="flame-s2-2"></div>
+            <div class="smoke"></div>
+            <div class="candle-wick"></div>
+            <div class="candle-body purple"></div>
+          </div>
+          <div class="candle">
+            <div class="flame" id="flame-s2-3"></div>
+            <div class="smoke"></div>
+            <div class="candle-wick"></div>
+            <div class="candle-body blue"></div>
+          </div>
+        </div>
+        <div class="cake-top">
+          <div class="cake-frosting"><div class="cake-frosting-inner"></div></div>
+        </div>
+        <div class="cake-middle">
+          <div class="cake-frosting"><div class="cake-frosting-inner"></div></div>
+        </div>
+        <div class="cake-bottom">
+          <div class="cake-frosting"><div class="cake-frosting-inner"></div></div>
+        </div>
+        <div class="cake-plate"></div>
+      </div>
+
+      <p class="birthday-message reveal">
+        Selamat memasuki level 23 ya, Alfan! 🌸✨<br><br>
+        Semoga makin ganteng, makin bahagia, makin banyak rezeki, dan makin gemoy!<br>
+        Semua impian dan cita-citamu perlahan tercapai ya! 💖
+      </p>
+
+      
+    </div>
+  </section>
+
+  <!-- SECTION 3 - POLAROID GALLERY -->
+  <section id="section-gallery">
+    <div class="section-wrapper">
+      <h2 class="section-title reveal">📸 Memory Gallery Alfan</h2>
+      <p class="section-subtitle reveal">Klik fotonya buat lihat momen gantengnya! 💕</p>
+      <div class="section-divider"></div>
+      <div class="gallery-grid" id="gallery-grid"></div>
+    </div>
+  </section>
+
+  <!-- SECTION BALON BONEKA -->
+<section id="section-balloon-game">
+  <div class="section-wrapper text-center">
+    <h2 class="section-title reveal">🎈 Pop The Plushie Balloons!</h2>
+    <p class="section-subtitle reveal">Klik balon boneka yang terbang untuk dapatkan pesan rahasia! 🧸✨</p>
+    <div class="section-divider"></div>
+    <div id="balloon-arena"></div>
+
+    <!-- Tambahan Modal Pop-up Kustom untuk Balon -->
+    <div id="balloon-popup" role="dialog" aria-modal="true">
+      <div class="balloon-popup-box glass-card">
+        <span class="balloon-popup-emoji" id="balloon-popup-emoji">🧸</span>
+        <div class="balloon-popup-title">Pesan Rahasia ✨</div>
+        <div class="balloon-popup-text" id="balloon-popup-text"></div>
+        <button class="btn-primary balloon-popup-close" id="balloon-popup-close">Asik, Makasih! 💖</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- SECTION 4 - 18 REASONS -->
+  <section id="section-reasons">
+    <div class="section-wrapper">
+      <h2 class="section-title reveal">✨Alasan Kenapa Alfan Itu Keren! ✨</h2>
+      <p class="section-subtitle reveal">Klik kartunya buat buka rahasianya! 💌</p>
+      <div class="section-divider"></div>
+      <div class="reasons-grid" id="reasons-grid"></div>
+    </div>
+  </section>
+
+  <!-- SECTION 5 - TIMELINE -->
+  <section id="section-timeline">
+    <div class="section-wrapper">
+      <h2 class="section-title reveal">⏳ Perjalanan Gemoy Menuju 23 Tahun</h2>
+      <p class="section-subtitle reveal">Setiap tahunnya membuat Alfan makin bersinar! ✨</p>
+      <div class="section-divider"></div>
+
+      <div class="timeline-container">
+        <div class="timeline-line"></div>
+        <div class="timeline-line-progress" id="timeline-progress"></div>
+
+        <!-- 2008 -->
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content glass-card">
+            <div class="timeline-year">2003 👶</div>
+            <p class="timeline-desc">Bayi mungil bernama Alfan lahir ke dunia! Dunia langsung jadi 100x lebih berwarna dan penuh kebahagiaan! 🌸</p>
+          </div>
+          <div class="timeline-spacer"></div>
+        </div>
+
+        <!-- 2015 -->
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-spacer"></div>
+          <div class="timeline-content glass-card">
+            <div class="timeline-year">2010 🎒</div>
+            <p class="timeline-desc">Masa SD yang polos! Lagi lucu-lucunya, suka main, dan mulai jadi kesayangan banyak orang. ✨</p>
+          </div>
+        </div>
+
+        <!-- 2021 -->
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content glass-card">
+            <div class="timeline-year">2016 📚</div>
+            <p class="timeline-desc">Masa SMP! Udah mulai kelihatan gantengnya, makin mandiri, dan banyak belajar hal seru!</p>
+          </div>
+          <div class="timeline-spacer"></div>
+        </div>
+
+        <!-- 2023 -->
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-spacer"></div>
+          <div class="timeline-content glass-card">
+            <div class="timeline-year">2019 🏫</div>
+            <p class="timeline-desc">Masuk SMK! Makin kece, berbakat, punya banyak teman, dan siap menaklukkan masa depan! 💪💕</p>
+          </div>
+        </div>
+
+        <!-- 2026 -->
+        <div class="timeline-item reveal">
+          <div class="timeline-dot highlight-dot"></div>
+          <div class="timeline-content glass-card highlight-card">
+            <div class="timeline-year highlight-text">2026 🎉</div>
+            <p class="timeline-desc">OFFICIAL 23 TAHUN! Dewasa, makin memesona, dan siap menjemput semua impian indahnya! 🌟💖</p>
+          </div>
+          <div class="timeline-spacer"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6 - LETTER -->
+  <section id="section-letter">
+    <div class="section-wrapper">
+      <h2 class="section-title reveal">💌 Surat Spesial Buat Alfan</h2>
+      <p class="section-subtitle reveal">Klik amplop di bawah untuk membaca isinya 💖</p>
+
+      <div class="envelope-wrapper reveal">
+        <div class="envelope" id="envelope">
+          <div class="envelope-body">
+            <div class="envelope-flap"></div>
+            <div class="envelope-seal">🎀</div>
+          </div>
+        </div>
+        <div class="envelope-click-hint">✨ Klik Amplopnya ya! ✨</div>
+      </div>
+
+      <!-- Letter Paper -->
+      <div class="letter-paper" id="letter-paper">
+        <div class="letter-lines"></div>
+        <div class="letter-title">Halo Alfan yang Tergemoy! 💖</div>
+        <div class="letter-body">
+          <p>Selamat ulang tahun yang ke-23 ya, Alfan Aditya Ramadhan! 🎉✨</p>
+          <p>Gak kerasa ya sekarang udah resmi berusia 23 tahun. Kamu sudah melewati banyak hal keren, tantangan, dan momen-momen manis sampai hari ini.</p>
+          <p>Terima kasih ya sudah tumbuh menjadi pribadi yang sangat hangat, ceria, baik hati, dan selalu bikin suasana jadi lebih menyenangkan.</p>
+          <p>Di usiamu yang baru ini, semoga langkahmu selalu dipermudah, diberikan kesehatan, dikelilingi orang-orang baik, dan semua doa-doamu dikabulkan satu per satu.</p>
+          <p>Tetap jadi Alfan yang apa adanya ya—yang selalu bisa bikin orang tersenyum! 💕</p>
+        </div>
+        <div class="letter-sign">Dengan Banyak Sayang ✨🌸</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 7 - GIFT GAME -->
+  <section id="section-game">
+    <div class="section-wrapper text-center">
+      <h2 class="section-title reveal">🎁 Mini Game: Tebak Hadiah Alfan</h2>
+      <p class="section-subtitle reveal">Pilih salah satu kado pink di bawah ini! 🎀</p>
+
+      <div class="gift-boxes reveal" id="gift-boxes"></div>
+      <p class="game-message" id="game-message">Kira-kira mana ya kado yang isinya kejutan? 🤔</p>
+
+      <button class="btn-primary" id="game-reset" style="display:none;">
+        🔄 Coba Main Lagi
+      </button>
+    </div>
+  </section>
+
+  <!-- SECTION 8 - WISH -->
+  <section id="section-wish">
+    <div class="section-wrapper text-center">
+      <h2 class="section-title reveal">🌠 Wish Upon A Pink Star</h2>
+      <p class="section-subtitle reveal">Tutup mata, bayangkan keinginanmu, lalu klik tombol di bawah! ⭐</p>
+
+      <button class="btn-wish glow-btn" id="btn-wish">
+        ✨ Kirim Doa ke Langit 💖
+      </button>
+
+      <div class="wish-result" id="wish-result">
+        🌸 Semoga semua harapan dan cita-cita Alfan<br>segera dikabulkan Tuhan ya! Amin! 🌟💖
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 9 - BLOW CANDLE -->
+  <section id="section-blowcandle">
+    <div class="section-wrapper text-center">
+      <h2 class="section-title reveal">🎂 Tiup Lilin Ulang Tahunnya!</h2>
+      <p class="section-subtitle reveal">Make a wish dulu... lalu klik tombol tiup lilinnya! 🕯️✨</p>
+
+      <div class="cake-container big-cake-wrapper reveal">
+        <div class="candle-row">
+          <div class="candle">
+            <div class="flame flame-blow"></div>
+            <div class="smoke"></div>
+            <div class="candle-wick"></div>
+            <div class="candle-body pink"></div>
+          </div>
+          <div class="candle">
+            <div class="flame flame-blow"></div>
+            <div class="smoke"></div>
+            <div class="candle-wick"></div>
+            <div class="candle-body purple"></div>
+          </div>
+          <div class="candle">
+            <div class="flame flame-blow"></div>
+            <div class="smoke"></div>
+            <div class="candle-wick"></div>
+            <div class="candle-body blue"></div>
+          </div>
+          <div class="candle">
+            <div class="flame flame-blow"></div>
+            <div class="smoke"></div>
+            <div class="candle-wick"></div>
+            <div class="candle-body pink"></div>
+          </div>
+          <div class="candle">
+            <div class="flame flame-blow"></div>
+            <div class="smoke"></div>
+            <div class="candle-wick"></div>
+            <div class="candle-body purple"></div>
+          </div>
+        </div>
+        <div class="cake-top">
+          <div class="cake-frosting"><div class="cake-frosting-inner"></div></div>
+        </div>
+        <div class="cake-middle">
+          <div class="cake-frosting"><div class="cake-frosting-inner"></div></div>
+        </div>
+        <div class="cake-bottom">
+          <div class="cake-frosting"><div class="cake-frosting-inner"></div></div>
+        </div>
+        <div class="cake-plate"></div>
+      </div>
+
+      <button class="btn-primary glow-btn" id="btn-blow">
+        💨 Tiup Lilinnya Sekarang! 🎂
+      </button>
+
+      <div id="blow-message">
+        🎉 Yeayyy! Selamat Ulang Tahun Alfan Aditya Ramadhan! 🎉<br>
+        <span>Semoga tahun ini jadi tahun paling membahagiakan buatmu! 💕</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 10 - ENDING -->
+  <section id="section-ending">
+    <div class="ending-content section-wrapper">
+      <h2 class="ending-title reveal">
+        🎉 Happy 23th Birthday<br>Alfan Aditya Ramadhan! 💖
+      </h2>
+
+      <p class="ending-text reveal">
+        Terima kasih sudah jadi seseorang yang luar biasa dan menyenangkan! ✨
+      </p>
+      <p class="ending-text reveal">
+        Nikmati hari bahagiamu ini ya.<br>
+        Semoga harimu selalu dipenuhi senyuman, tawa, dan rasa bahagia!
+      </p>
+
+      <div class="ending-final reveal">
+        ✨ Always Be Happy, Alfan! ✨
+      </div>
+
+      <div class="ending-emojis reveal">
+        🌸 💖 🎂 🎈 🎊 💫 ⭐ 🎀
+      </div>
+
+      <div class="reveal" style="margin-top: 36px;">
+        <a href="#section-opening" class="btn-primary" id="btn-restart">
+          🔝 Ulangi Kejutan Dari Awal
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FLOATING CONTROLS -->
+  <div class="floating-controls">
+    <button id="easter-egg-btn" title="Jangan Diklik!">🙈</button>
+    <button id="back-to-top" title="Kembali ke Atas">🔝</button>
+    <button id="music-player" title="Play/Pause Music">🎵</button>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>

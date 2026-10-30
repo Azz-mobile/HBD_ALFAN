@@ -451,7 +451,7 @@ function initGame() {
       if (i === winIndex) {
         playSound('tada');
         box.textContent = '🎉';
-        if (gameMessage) gameMessage.innerHTML = '✨ SELAMAT! Kamu menangin pelukan & doa terbaik di umur 18 ini! 💕';
+        if (gameMessage) gameMessage.innerHTML = '✨ SELAMAT! Kamu menangin pelukan & doa terbaik di umur 23 ini! 💕';
         if (resetBtn) resetBtn.style.display = 'inline-flex';
         triggerEmojiConfetti();
       } else {
